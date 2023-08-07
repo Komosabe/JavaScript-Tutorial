@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>   
+        body {
+            background: black;
+            color: white;  
+        }
+
+        * {
+            margin: 20px 2px;
+        }
+        
+    </style>
+</head>
+<body>       
+    <div>test</div>
+    <p>test 2</p>
+    <article>test 3</article>
+    <script> 
+        
+        /*
+            this a funkcje nasłuchujące zdarzenia
+        */
+
+        let div = document.querySelector("div");
+        div.addEventListener("click", function (event) {
+            console.log(this); // kliknięty div
+            console.log(event.target);
+
+            setTimeout(function () {
+                console.log(this); // window
+            }, 0);
+        });
+
+        // test 2
+        let p = document.querySelector("p");
+        p.addEventListener("click", function (event) {
+            let self = this;
+
+            setTimeout(function () {
+                console.log(this); // window
+                console.log(self); // div
+            }, 0);
+        });
+
+        // test 3
+        let article = document.querySelector("article");
+        article.addEventListener("click", function (event) { 
+
+            setTimeout( () => {
+                console.log(this); // article
+            }, 0);
+        });
+
+ 
+    </script> 
+    
+</body>
+</html>

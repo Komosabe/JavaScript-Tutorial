@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let b = 30; // zmienna globalna b 
+        let c = 10;
+        function foo() {
+            let b = 5; // osobna zmienna lokalna b
+            c = -1; // zmiana globalnej zmiennej
+            console.log("b: ", b); // odwolanie sie do b lokalnego
+        }
+
+        foo();
+
+        let d = 99;
+
+        function bar() {
+            let e = 12;
+
+            function test() {
+                let num = 45;
+                console.log(`d:${d} e:${e} num:${num}`);
+            }
+            
+            return test;
+        }
+
+        let show = bar(); // bar() konczy sie tutaj
+
+        console.log(show); // test
+
+        show();
+
+    </script>
+</body>
+</html>

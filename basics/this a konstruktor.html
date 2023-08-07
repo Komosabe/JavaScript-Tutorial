@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function User(name) {
+            this.name = name;
+            this.showData = function () {
+                console.log(this.name);
+            }
+        }
+
+        let user1 = new User("John");
+        console.log(user1); 
+
+        let user2 = User("Arthur");
+        console.log(window.name); 
+
+    </script>
+</body>
+</html>
